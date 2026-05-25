@@ -77,4 +77,54 @@ class Buku extends Model
     {
         return $query->where('kategori', $kategori);
     }
+
+    /**
+     * Accessor untuk badge status stok.
+     */
+    public function getStatusStokBadgeAttribute(): string
+    {
+        if ($this->stok == 0) {
+            return '<span class="badge bg-danger">Habis</span>';
+        } elseif ($this->stok >= 1 && $this->stok <= 5) {
+            return '<span class="badge bg-warning">Menipis</span>';
+        } elseif ($this->stok >= 6 && $this->stok <= 15) {
+            return '<span class="badge bg-info">Sedang</span>';
+        } else {
+            return '<span class="badge bg-success">Aman</span>';
+        }
+    }
+
+    /**
+     * Accessor untuk label tahun buku.
+     */
+    public function getTahunLabelAttribute(): string
+    {
+        return $this->tahun_terbit >= 2024
+            ? 'Buku Baru'
+            : 'Buku Lama';
+    }
+
+    /**
+     * Scope untuk stok menipis.
+     */
+    public function scopeStokMenipis($query)
+    {
+        return $query->where('stok', '<', 5);
+    }
+
+    /**
+     * Scope untuk range harga.
+     */
+    public function scopeHargaRange($query, $min, $max)
+    {
+        return $query->whereBetween('harga', [$min, $max]);
+    }
+
+    /**
+     * Scope untuk buku terbaru.
+     */
+    public function scopeTerbaru($query)
+    {
+        return $query->where('tahun_terbit', '>=', 2024);
+    }
 }

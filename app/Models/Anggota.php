@@ -60,6 +60,32 @@ class Anggota extends Model
     {
         return Carbon::parse($this->tanggal_daftar)->diffInDays(now());
     }
+
+    /**
+     * Accessor untuk badge status anggota.
+     */
+    public function getStatusBadgeAttribute(): string
+    {
+        if ($this->status == 'Aktif') {
+            return '<span class="badge bg-success">Aktif</span>';
+        }
+
+        return '<span class="badge bg-secondary">Nonaktif</span>';
+    }
+
+    /**
+     * Accessor untuk kategori usia.
+     */
+    public function getKategoriUsiaAttribute(): string
+    {
+        if ($this->umur < 20) {
+            return 'Remaja';
+        } elseif ($this->umur >= 20 && $this->umur <= 50) {
+            return 'Dewasa';
+        } else {
+            return 'Senior';
+        }
+    }
  
     /**
      * Scope untuk filter anggota aktif.
@@ -75,5 +101,14 @@ class Anggota extends Model
     public function scopeJenisKelamin($query, $jenisKelamin)
     {
         return $query->where('jenis_kelamin', $jenisKelamin);
+    }
+
+    /**
+     * Scope untuk anggota terdaftar bulan ini.
+     */
+    public function scopeTerdaftarBulanIni($query)
+    {
+        return $query->whereMonth('tanggal_daftar', now()->month)
+                     ->whereYear('tanggal_daftar', now()->year);
     }
 }
