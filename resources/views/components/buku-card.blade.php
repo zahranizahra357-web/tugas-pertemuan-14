@@ -41,21 +41,33 @@
     </div>
 
     @if($showActions)
-    <div class="card-footer">
+<div class="card-footer">
+
+    <div class="d-grid gap-2">
 
         <a href="{{ route('buku.show', $buku->id) }}"
-            class="btn btn-info btn-sm">
-
+           class="btn btn-info btn-sm text-white">
             Detail
         </a>
 
         <a href="{{ route('buku.edit', $buku->id) }}"
-            class="btn btn-warning btn-sm">
-
+           class="btn btn-warning btn-sm">
             Edit
         </a>
 
+        {{-- Delete Button dengan SweetAlert --}}
+        <form action="{{ route('buku.destroy', $buku->id) }}" 
+            method="POST" 
+            class="d-inline delete-form">
+            @csrf
+            @method('DELETE')
+            <button type="button" class="btn btn-sm btn-danger w-100 btn-delete" 
+                    data-judul="{{ $buku->judul }}">
+                <i class="bi bi-trash"></i> Hapus
+            </button>
+        </form>
     </div>
-    @endif
+</div>
+@endif
 
 </div>

@@ -4,26 +4,26 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\KodeBukuFormat;
 
 class StoreBukuRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
+        
         return [
-            'kode_buku' => 'required|string|max:20|unique:buku,kode_buku',
+            'kode_buku' => [
+            'required',
+            'string',
+            'max:20',
+            'unique:buku,kode_buku',
+            new KodeBukuFormat,
+        ],
             'judul' => 'required|string|max:200',
             'kategori' => 'required|in:Programming,Database,Web Design,Networking,Data Science',
             'pengarang' => 'required|string|max:100',
@@ -34,11 +34,37 @@ class StoreBukuRequest extends FormRequest
             'stok' => 'required|integer|min:0',
             'deskripsi' => 'nullable|string',
             'bahasa' => 'required|string|max:20',
-            //
         ];
     }
+
+    public function withValidator($validator)
+{
+    $validator->after(function ($validator) {
+
+    
+        if (
+            $this->kategori == 'Programming' &&
+            $this->bahasa != 'Bahasa Inggris'
+        ) {
+            $validator->errors()->add(
+                'bahasa',
+                'Buku kategori Programming harus menggunakan Bahasa Inggris.'
+            );
+        }
+
+        if (
+            $this->tahun_terbit < 2000 &&
+            $this->stok > 5
+        ) {
+            $validator->errors()->add(
+                'stok',
+                'Untuk buku terbit sebelum tahun 2000, stok maksimal 5.'
+            );
+        }
+
+    });
 }
-public function messages(): array
+    public function messages(): array
     {
         return [
             'kode_buku.required' => 'Kode buku wajib diisi.',
@@ -65,7 +91,7 @@ public function messages(): array
         ];
     }
 
-     public function attributes(): array
+    public function attributes(): array
     {
         return [
             'kode_buku' => 'kode buku',

@@ -11,6 +11,8 @@
     
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
     
     {{-- Custom CSS --}}
     <style>
@@ -45,29 +47,19 @@
     {{-- Main Content --}}
     <main class="py-4">
         <div class="container">
-            {{-- Alert Messages --}}
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="bi bi-check-circle-fill"></i>
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
-            
-            @if (session('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    {{ session('error') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
-            
-            @if (session('info'))
-                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                    <i class="bi bi-info-circle-fill"></i>
-                    {{ session('info') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
+            @if (session('success') || session('error') || session('info') || session('warning'))
+                @push('scripts')
+                <script>
+                    // Auto hide alerts after 5 seconds
+                    setTimeout(function() {
+                        let alerts = document.querySelectorAll('.alert');
+                        alerts.forEach(function(alert) {
+                            let bsAlert = new bootstrap.Alert(alert);
+                            bsAlert.close();
+                        });
+                    }, 5000);
+                </script>
+                @endpush
             @endif
             
             {{-- Page Content --}}
@@ -80,6 +72,8 @@
     
     {{-- Bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     
     @stack('scripts')
 </body>

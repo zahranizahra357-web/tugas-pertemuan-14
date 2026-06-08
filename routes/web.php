@@ -16,6 +16,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 // Buku
 Route::resource('buku', BukuController::class);
 
+Route::post('/buku/bulk-delete', [BukuController::class, 'bulkDelete'])
+    ->name('buku.bulk-delete');
+
 Route::get('/buku/search', [BukuController::class, 'search'])
     ->name('buku.search');
 
