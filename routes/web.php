@@ -29,8 +29,15 @@ Route::get('/buku/export', [BukuController::class, 'export'])
     ->name('buku.export');   
 
 // Anggota
+Route::get('/anggota/export', [AnggotaController::class, 'export'])
+    ->name('anggota.export');
+
+Route::get('/anggota/search', [AnggotaController::class, 'search'])
+    ->name('anggota.search');
+
 Route::resource('anggota', AnggotaController::class);
 
+Route::resource('anggota', AnggotaController::class);
 // Kategori
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/kategori/{id}', [KategoriController::class, 'show']);
