@@ -114,26 +114,23 @@ http://127.0.0.1:8000
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshot/dashboard.png)
 
 ### Daftar Buku
 
-![Daftar Buku](screenshots/buku.png)
+![Daftar Buku](screenshot/buku.png)
 
 ### Daftar Anggota
 
-![Daftar Anggota](screenshots/anggota.png)
+![Daftar Anggota](screenshot/anggota.png)
 
 ### Export Data Anggota ke Excel
 
-![Export Excel](screenshots/export-excel.png)
+![Export Excel](screenshot/export-excel.png)
 
 ### Search dan Filter Anggota
 
-![Search Filter](screenshots/search-filter.png)
-
----
-
+![Filter Anggota](screenshot/filter-anggota.png)
 ## Struktur Database
 
 ### Tabel Buku
