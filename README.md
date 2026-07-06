@@ -119,7 +119,7 @@ Denda dihitung secara otomatis sebesar **Rp5.000 per hari** apabila melewati bat
 
 Halaman laporan seluruh transaksi perpustakaan.
 
-![Laporan Transaksi](screenshot/08-laporan-transaksi.png)
+![Stok Buku](screenshot/08-stok-buku-bertambah.png)
 
 ---
 
@@ -127,7 +127,7 @@ Halaman laporan seluruh transaksi perpustakaan.
 
 Laporan dapat difilter berdasarkan tanggal, status transaksi, dan anggota.
 
-![Filter Laporan](screenshot/09-filter-laporan.png)
+![Laporan](screenshot/09-laporan-transaksi.png)
 
 ---
 
@@ -135,15 +135,14 @@ Laporan dapat difilter berdasarkan tanggal, status transaksi, dan anggota.
 
 Laporan transaksi dapat diekspor menjadi file PDF.
 
-![Export PDF](screenshot/10-export-pdf.png)
-
+![Filter](screenshot/10-filter-laporan.png)
 ---
 
 ## 11. Dashboard Buku Terlambat
 
 Widget yang menampilkan jumlah transaksi yang terlambat beserta daftar anggotanya.
 
-![Widget Buku Terlambat](screenshot/11-widget-buku-terlambat.png)
+![Export PDF](screenshot/11-export-pdf.png)
 
 ---
 
@@ -151,7 +150,7 @@ Widget yang menampilkan jumlah transaksi yang terlambat beserta daftar anggotany
 
 Badge berwarna merah akan muncul pada transaksi yang melewati batas pengembalian.
 
-![Badge Terlambat](screenshot/12-badge-terlambat.png)
+![Widget](screenshot/12-widget-buku-terlambat.png)
 
 ---
 
@@ -159,8 +158,7 @@ Badge berwarna merah akan muncul pada transaksi yang melewati batas pengembalian
 
 Peringatan akan muncul pada halaman detail transaksi jika buku belum dikembalikan setelah tanggal jatuh tempo.
 
-![Reminder](screenshot/13-reminder-keterlambatan.png)
-
+![Badge](screenshot/13-badge-terlambat.png)
 ---
 
 ## 14. Database Transaksi
