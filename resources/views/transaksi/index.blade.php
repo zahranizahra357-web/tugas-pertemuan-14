@@ -68,16 +68,27 @@
                         <td>{{ $transaksi->tanggal_pinjam->format('d M Y') }}</td>
                         <td>{{ $transaksi->tanggal_kembali->format('d M Y') }}</td>
                         <td>
-                            @if($transaksi->status == 'Dipinjam')
-                                <span class="badge bg-warning text-dark">Dipinjam</span>
+                            @if($transaksi->status == 'Dipinjam' && $transaksi->terlambat > 0)
+                                <span class="badge bg-danger">
+                                    Terlambat {{ $transaksi->terlambat }} Hari
+                                </span>
+
+                            @elseif($transaksi->status == 'Dipinjam')
+                                <span class="badge bg-warning text-dark">
+                                    Dipinjam
+                                </span>
+
                             @else
-                                <span class="badge bg-success">Dikembalikan</span>
+                                <span class="badge bg-success">
+                                    Dikembalikan
+                                </span>
                             @endif
                         </td>
+
                         <td>
-                        <a href="{{ route('transaksi.show', $transaksi->id) }}"
-                            class="btn btn-sm btn-info text-white">
-                            Detail
+                            <a href="{{ route('transaksi.show', $transaksi->id) }}"
+                                class="btn btn-sm btn-info text-white">
+                                Detail
                             </a>
                         </td>
                     </tr>

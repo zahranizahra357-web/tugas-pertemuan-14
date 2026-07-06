@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use App\Models\Anggota;
+use App\Models\Transaksi;
 
 class DashboardController extends Controller
 {
@@ -23,6 +24,25 @@ class DashboardController extends Controller
         $bukuTerbaru = Buku::latest()->take(5)->get();
         $anggotaTerbaru = Anggota::latest()->take(5)->get();
 
+        $jumlahTerlambat = Transaksi::where('status', 'Dipinjam')
+        ->whereDate('tanggal_kembali', '<', now())
+        ->count();
+
+        $anggotaTerlambat = Transaksi::with(['anggota', 'buku'])
+        ->where('status', 'Dipinjam')
+        ->whereDate('tanggal_kembali', '<', now())
+        ->get();
+
+        // Statistik tambahan
+        $totalTransaksi = Transaksi::count();
+
+        $sedangDipinjam = Transaksi::where('status', 'Dipinjam')->count();
+
+        $dendaBulanIni = Transaksi::whereMonth('tanggal_dikembalikan', now()->month)
+            ->sum('denda');
+
+        $transaksiHariIni = Transaksi::whereDate('tanggal_pinjam', today())->count();
+
         return view('dashboard', compact(
             'totalBuku',
             'bukuTersedia',
@@ -31,7 +51,15 @@ class DashboardController extends Controller
             'anggotaAktif',
             'anggotaNonaktif',
             'bukuTerbaru',
-            'anggotaTerbaru'
+            'anggotaTerbaru',
+            'jumlahTerlambat',
+            'anggotaTerlambat',
+
+            // Statistik tambahan
+            'totalTransaksi',
+            'sedangDipinjam',
+            'dendaBulanIni',
+            'transaksiHariIni',
         ));
     }
 }

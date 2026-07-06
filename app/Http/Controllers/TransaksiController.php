@@ -8,6 +8,7 @@ use App\Models\Buku;
 use App\Models\Anggota;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
  
 class TransaksiController extends Controller
 {
@@ -22,6 +23,7 @@ class TransaksiController extends Controller
         
         return view('transaksi.index', compact('transaksis'));
     }
+
 
     public function laporan(Request $request)
 {
@@ -146,30 +148,32 @@ class TransaksiController extends Controller
         try {
             DB::transaction(function () use ($id) {
                 $transaksi = Transaksi::findOrFail($id);
-                
-                // 1. Update transaksi
-                $tanggalDikembalikan = now();
-                $denda = $this->hitungDenda($transaksi, $tanggalDikembalikan);
-                
-                $transaksi->update([
-                    'status' => 'Dikembalikan',
-                    'tanggal_dikembalikan' => $tanggalDikembalikan,
-                    'denda' => $denda,
-                ]);
-                
-                // 2. Update stok buku (tambah 1)
-                $transaksi->buku->increment('stok');
-            });
-            
-            return redirect()->route('transaksi.show', $id)
-                             ->with('success', 'Buku berhasil dikembalikan!');
-                             
-        } catch (\Exception $e) {
-            return redirect()->back()
-                             ->with('error', 'Gagal mengembalikan buku: ' . $e->getMessage());
-        }
-    }
+
+                // Cek apakah sudah dikembalikan
+            if ($transaksi->status === 'Dikembalikan') {
+                throw new \Exception('Buku sudah dikembalikan sebelumnya.');
+            }
  
+            $tanggalDikembalikan = now();
+            $denda = $this->hitungDenda($transaksi, $tanggalDikembalikan);
+ 
+            $transaksi->update([
+                'status' => 'Dikembalikan',
+                'tanggal_dikembalikan' => $tanggalDikembalikan,
+                'denda' => $denda,
+            ]);
+ 
+            $transaksi->buku->increment('stok');
+        });
+ 
+        return redirect()->route('transaksi.show', $id)
+                         ->with('success', 'Buku berhasil dikembalikan!');
+    } catch (\Exception $e) {
+        return redirect()->back()
+                         ->with('error', 'Gagal mengembalikan buku: ' . $e->getMessage());
+    }
+}
+
     /**
      * Generate kode transaksi otomatis.
      */

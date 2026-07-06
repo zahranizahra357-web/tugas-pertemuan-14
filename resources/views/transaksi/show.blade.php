@@ -99,8 +99,7 @@
                 @method('PUT')
 
                 <button type="submit"
-                        class="btn btn-success"
-                        onclick="return confirm('Yakin buku ini akan dikembalikan?')">
+                        class="btn btn-success btn-kembalikan">
                     Kembalikan Buku
                 </button>
 
@@ -117,5 +116,27 @@
     </div>
 
 </div>
+     @section('scripts')
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+        document.querySelector('.btn-kembalikan')?.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Konfirmasi',
+                text: 'Yakin buku ini akan dikembalikan?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Kembalikan',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.closest('form').submit();
+                }
+            });
+        });
+        </script>
+        @endsection
 
 @endsection

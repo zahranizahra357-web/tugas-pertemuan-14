@@ -60,7 +60,7 @@ class Transaksi extends Model
         }
         
         if (now() > $this->tanggal_kembali) {
-            return $this->tanggal_kembali->diffInDays(now());
+            return (int) $this->tanggal_kembali->diffInDays(now());
         }
         
         return 0;
