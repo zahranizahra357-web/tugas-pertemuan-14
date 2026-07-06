@@ -63,7 +63,7 @@ Sistem Informasi Perpustakaan merupakan aplikasi berbasis Laravel yang digunakan
 
 Halaman utama aplikasi yang menampilkan ringkasan informasi.
 
-![Dashboard](screenshots/01-dashboard.png)
+![Dashboard](screenshot/01-dashboard.png)
 
 ---
 
@@ -71,7 +71,7 @@ Halaman utama aplikasi yang menampilkan ringkasan informasi.
 
 Menampilkan seluruh data buku yang tersedia di perpustakaan.
 
-![Data Buku](screenshots/02-data-buku.png)
+![Data Buku](screenshot/02-data-buku.png)
 
 ---
 
