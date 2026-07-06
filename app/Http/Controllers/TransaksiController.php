@@ -62,6 +62,42 @@ class TransaksiController extends Controller
     ));
 }
  
+   public function exportPdf(Request $request)
+{
+    $query = Transaksi::with(['anggota', 'buku']);
+
+    // Filter tanggal
+    if ($request->filled('tanggal_dari') && $request->filled('tanggal_sampai')) {
+        $query->whereBetween('tanggal_pinjam', [
+            $request->tanggal_dari,
+            $request->tanggal_sampai
+        ]);
+    }
+
+    // Filter status
+    if ($request->filled('status')) {
+        $query->where('status', $request->status);
+    }
+
+    // Filter anggota
+    if ($request->filled('anggota_id')) {
+        $query->where('anggota_id', $request->anggota_id);
+    }
+
+    $transaksis = $query->latest()->get();
+
+    $totalTransaksi = $transaksis->count();
+    $totalDenda = $transaksis->sum('denda');
+
+    $pdf = Pdf::loadView(
+    'transaksi.laporan_pdf',
+    compact('transaksis', 'totalTransaksi', 'totalDenda')
+    );
+
+    return $pdf->download('laporan_transaksi.pdf');
+}
+
+
     /**
      * Show the form for creating a new resource.
      */

@@ -40,6 +40,19 @@
                     <td>{{ $transaksi->tanggal_kembali->format('d M Y') }}</td>
                 </tr>
 
+                @if($transaksi->status == 'Dipinjam' && now()->gt($transaksi->tanggal_kembali))
+                <tr>
+                    <td colspan="2">
+                        <div class="alert alert-danger">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <strong>Peringatan!</strong>
+                            Buku ini telah melewati batas pengembalian
+                            selama <strong>{{ $transaksi->terlambat }} hari</strong>.
+                        </div>
+                    </td>
+                </tr>
+                @endif
+
                 <tr>
                     <th>Status</th>
                     <td>{{ $transaksi->status }}</td>
