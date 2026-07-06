@@ -71,7 +71,7 @@ Halaman utama aplikasi yang menampilkan ringkasan informasi.
 
 Menampilkan seluruh data buku yang tersedia di perpustakaan.
 
-![Data Buku](screenshot/02-data-buku.png)
+![Data Buku](screenshot/02-daftar-buku.png)
 
 ---
 
