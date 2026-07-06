@@ -8,9 +8,9 @@ Sistem Informasi Perpustakaan merupakan aplikasi berbasis Laravel yang digunakan
 
 ## 👤 Identitas
 
-**Nama :* Zahra Zahrani
-**NIM :** 60324011
-**Mata Kuliah :** Pemrograman Web 2
+**Nama :** Nama Anda
+**NIM :** NIM Anda
+**Mata Kuliah :** Pemrograman Web Framework
 
 ---
 
@@ -276,4 +276,4 @@ php artisan serve
 
 # 📄 Lisensi
 
-Project ini dibuat untuk memenuhi tugas mata kuliah **Pemrograman Web 2**.
+Project ini dibuat untuk memenuhi tugas mata kuliah **Pemrograman Web Framework**.
