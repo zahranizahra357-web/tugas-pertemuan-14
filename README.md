@@ -79,7 +79,7 @@ Menampilkan seluruh data buku yang tersedia di perpustakaan.
 
 Menampilkan daftar anggota perpustakaan.
 
-![Data Anggota](screenshot/03-data-anggota.png)
+![Data Anggota](screenshot/03-daftar-anggota.png)
 
 ---
 
@@ -95,7 +95,7 @@ Halaman yang menampilkan seluruh transaksi peminjaman buku.
 
 Menampilkan informasi lengkap mengenai transaksi peminjaman.
 
-![Detail Transaksi](screenshot/05-detail-transaksi.png)
+![Detail Transaksi](screenshot/05-detail-transaksi-sebelum.png)
 
 ---
 
@@ -103,7 +103,7 @@ Menampilkan informasi lengkap mengenai transaksi peminjaman.
 
 Proses pengembalian buku melalui tombol **Kembalikan Buku**.
 
-![Pengembalian Buku](screenshot/06-pengembalian-buku.png)
+![Pengembalian Buku](screenshot/06-detail-transaksi-sesudah.png)
 
 ---
 
