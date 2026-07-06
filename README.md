@@ -79,7 +79,7 @@ Menampilkan seluruh data buku yang tersedia di perpustakaan.
 
 Menampilkan daftar anggota perpustakaan.
 
-![Data Anggota](screenshots/03-data-anggota.png)
+![Data Anggota](screenshot/03-data-anggota.png)
 
 ---
 
@@ -87,7 +87,7 @@ Menampilkan daftar anggota perpustakaan.
 
 Halaman yang menampilkan seluruh transaksi peminjaman buku.
 
-![Daftar Transaksi](screenshots/04-daftar-transaksi.png)
+![Daftar Transaksi](screenshot/04-daftar-transaksi.png)
 
 ---
 
@@ -95,7 +95,7 @@ Halaman yang menampilkan seluruh transaksi peminjaman buku.
 
 Menampilkan informasi lengkap mengenai transaksi peminjaman.
 
-![Detail Transaksi](screenshots/05-detail-transaksi.png)
+![Detail Transaksi](screenshot/05-detail-transaksi.png)
 
 ---
 
@@ -103,7 +103,7 @@ Menampilkan informasi lengkap mengenai transaksi peminjaman.
 
 Proses pengembalian buku melalui tombol **Kembalikan Buku**.
 
-![Pengembalian Buku](screenshots/06-pengembalian-buku.png)
+![Pengembalian Buku](screenshot/06-pengembalian-buku.png)
 
 ---
 
@@ -111,7 +111,7 @@ Proses pengembalian buku melalui tombol **Kembalikan Buku**.
 
 Denda dihitung secara otomatis sebesar **Rp5.000 per hari** apabila melewati batas tanggal pengembalian.
 
-![Perhitungan Denda](screenshots/07-perhitungan-denda.png)
+![Perhitungan Denda](screenshot/07-perhitungan-denda.png)
 
 ---
 
@@ -119,7 +119,7 @@ Denda dihitung secara otomatis sebesar **Rp5.000 per hari** apabila melewati bat
 
 Halaman laporan seluruh transaksi perpustakaan.
 
-![Laporan Transaksi](screenshots/08-laporan-transaksi.png)
+![Laporan Transaksi](screenshot/08-laporan-transaksi.png)
 
 ---
 
@@ -127,7 +127,7 @@ Halaman laporan seluruh transaksi perpustakaan.
 
 Laporan dapat difilter berdasarkan tanggal, status transaksi, dan anggota.
 
-![Filter Laporan](screenshots/09-filter-laporan.png)
+![Filter Laporan](screenshot/09-filter-laporan.png)
 
 ---
 
@@ -135,7 +135,7 @@ Laporan dapat difilter berdasarkan tanggal, status transaksi, dan anggota.
 
 Laporan transaksi dapat diekspor menjadi file PDF.
 
-![Export PDF](screenshots/10-export-pdf.png)
+![Export PDF](screenshot/10-export-pdf.png)
 
 ---
 
@@ -143,7 +143,7 @@ Laporan transaksi dapat diekspor menjadi file PDF.
 
 Widget yang menampilkan jumlah transaksi yang terlambat beserta daftar anggotanya.
 
-![Widget Buku Terlambat](screenshots/11-widget-buku-terlambat.png)
+![Widget Buku Terlambat](screenshot/11-widget-buku-terlambat.png)
 
 ---
 
@@ -151,7 +151,7 @@ Widget yang menampilkan jumlah transaksi yang terlambat beserta daftar anggotany
 
 Badge berwarna merah akan muncul pada transaksi yang melewati batas pengembalian.
 
-![Badge Terlambat](screenshots/12-badge-terlambat.png)
+![Badge Terlambat](screenshot/12-badge-terlambat.png)
 
 ---
 
@@ -159,7 +159,7 @@ Badge berwarna merah akan muncul pada transaksi yang melewati batas pengembalian
 
 Peringatan akan muncul pada halaman detail transaksi jika buku belum dikembalikan setelah tanggal jatuh tempo.
 
-![Reminder](screenshots/13-reminder-keterlambatan.png)
+![Reminder](screenshot/13-reminder-keterlambatan.png)
 
 ---
 
@@ -167,7 +167,7 @@ Peringatan akan muncul pada halaman detail transaksi jika buku belum dikembalika
 
 Struktur tabel transaksi pada database.
 
-![Database Transaksi](screenshots/14-database-transaksi.png)
+![Database Transaksi](screenshot/14-database-transaksi.png)
 
 ---
 
@@ -175,7 +175,7 @@ Struktur tabel transaksi pada database.
 
 Struktur tabel buku yang menunjukkan perubahan stok setelah pengembalian.
 
-![Database Buku](screenshots/15-database-buku.png)
+![Database Buku](screenshot/15-database-buku.png)
 
 ---
 
