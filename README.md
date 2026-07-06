@@ -161,21 +161,6 @@ Peringatan akan muncul pada halaman detail transaksi jika buku belum dikembalika
 ![Badge](screenshot/13-badge-terlambat.png)
 ---
 
-## 14. Database Transaksi
-
-Struktur tabel transaksi pada database.
-
-![Database Transaksi](screenshot/14-database-transaksi.png)
-
----
-
-## 15. Database Buku
-
-Struktur tabel buku yang menunjukkan perubahan stok setelah pengembalian.
-
-![Database Buku](screenshot/15-database-buku.png)
-
----
 
 # ⚙️ Cara Menjalankan Project
 
