@@ -1,169 +1,109 @@
-# Sistem Manajemen Perpustakaan Berbasis Web Menggunakan Laravel 12
+# Sistem Informasi Perpustakaan
 
 ## Deskripsi
 
-Sistem Manajemen Perpustakaan merupakan aplikasi berbasis web yang dikembangkan menggunakan framework Laravel 12. Aplikasi ini digunakan untuk mengelola data buku dan data anggota perpustakaan secara mudah dan terstruktur.
+Aplikasi Sistem Informasi Perpustakaan berbasis Laravel yang digunakan untuk mengelola data buku, anggota, dan transaksi peminjaman buku.
 
-Project ini dibuat sebagai tugas mata kuliah Pemrograman Web.
+## Fitur Utama
 
----
+### 1. Manajemen Buku
 
-## Fitur Aplikasi
+* Tambah buku
+* Edit buku
+* Hapus buku
+* Lihat daftar buku
 
-### Manajemen Buku
+### 2. Manajemen Anggota
 
-* Menampilkan daftar buku.
-* Menambahkan data buku.
-* Mengubah data buku.
-* Menghapus data buku.
-* Menampilkan detail buku.
-* Pencarian dan filter buku.
-* Export data buku ke file CSV.
+* Tambah anggota
+* Edit anggota
+* Hapus anggota
+* Lihat daftar anggota
 
-### Manajemen Anggota
+### 3. Transaksi Peminjaman
 
-* Menampilkan daftar anggota.
-* Menambahkan data anggota.
-* Mengubah data anggota.
-* Menghapus data anggota.
-* Menampilkan detail anggota.
-* Export data anggota ke file Excel (.xlsx) menggunakan Laravel Excel.
-* Pencarian anggota berdasarkan nama, email, dan nomor telepon.
-* Filter anggota berdasarkan:
+* Peminjaman buku
+* Pengembalian buku
+* Update stok otomatis saat pengembalian
+* Perhitungan denda keterlambatan Rp5.000 per hari
 
-  * Jenis Kelamin
-  * Status Anggota
-  * Pekerjaan
+### 4. Laporan Transaksi
 
----
+* Filter berdasarkan tanggal
+* Filter berdasarkan status
+* Filter berdasarkan anggota
+* Menampilkan total transaksi
+* Menampilkan total denda
+* Export laporan ke PDF
+
+### 5. Notifikasi Keterlambatan
+
+* Widget jumlah buku terlambat pada dashboard
+* Daftar anggota yang terlambat
+* Badge "Terlambat" pada transaksi
+* Reminder pada detail transaksi yang melewati batas pengembalian
 
 ## Teknologi yang Digunakan
 
-* PHP 8.3
-* Laravel 12
+* Laravel
+* PHP
 * MySQL
-* Bootstrap 5
-* Laravel Excel (maatwebsite/excel)
-* Composer
+* Bootstrap
 
----
+## Screenshot
 
-## Instalasi Project
+### Pengembalian Buku
 
-### 1. Clone Repository
+* Detail transaksi sebelum pengembalian
+* Detail transaksi setelah pengembalian
+* Tampilan perhitungan denda
+* Bukti update stok buku
 
-```bash
-git clone https://github.com/username/perpustakaan.git
-```
+### Laporan Transaksi
 
-### 2. Masuk ke Folder Project
+* Halaman laporan transaksi
+* Filter laporan
+* Total transaksi dan total denda
+* Export PDF
 
-```bash
-cd perpustakaan
-```
+### Notifikasi Keterlambatan
 
-### 3. Install Dependency
+* Dashboard widget buku terlambat
+* Badge terlambat pada transaksi
+* Reminder pada detail transaksi
+
+## Cara Menjalankan Project
+
+1. Clone repository
+2. Install dependency
 
 ```bash
 composer install
 ```
 
-### 4. Salin File Environment
+3. Copy file environment
 
 ```bash
-copy .env.example .env
+cp .env.example .env
 ```
 
-### 5. Generate Application Key
+4. Generate application key
 
 ```bash
 php artisan key:generate
 ```
 
-### 6. Konfigurasi Database
+5. Konfigurasi database pada file .env
 
-Buat database baru, kemudian sesuaikan konfigurasi database pada file `.env`.
-
-```env
-DB_DATABASE=perpustakaan
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-### 7. Jalankan Migrasi Database
+6. Jalankan migration
 
 ```bash
 php artisan migrate
 ```
 
-### 8. Menjalankan Aplikasi
+7. Jalankan server
 
 ```bash
 php artisan serve
 ```
-
-Aplikasi dapat diakses melalui:
-
-```text
-http://127.0.0.1:8000
-```
-
----
-
-## Screenshot Aplikasi
-
-### Dashboard
-
-![Dashboard](screenshot/dashboard.png)
-
-### Daftar Buku
-
-![Daftar Buku](screenshot/buku.png)
-
-### Daftar Anggota
-
-![Daftar Anggota](screenshot/anggota.png)
-
-### Export Data Anggota ke Excel
-
-![Export Excel](screenshot/export-excel.png)
-
-### Search dan Filter Anggota
-
-![Filter Anggota](screenshot/filter-anggota.png)
-## Struktur Database
-
-### Tabel Buku
-
-* id
-* judul
-* pengarang
-* penerbit
-* tahun_terbit
-* kategori
-* stok
-
-### Tabel Anggota
-
-* id
-* kode_anggota
-* nama
-* email
-* telepon
-* alamat
-* tanggal_lahir
-* jenis_kelamin
-* pekerjaan
-* tanggal_daftar
-* status
-
----
-
-## Author
-
-**Nama:** Zahra Zahrani
-**NIM:** 6032401
-**Program Studi:** Informatika
-
-
 
