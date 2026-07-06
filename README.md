@@ -1,109 +1,279 @@
-# Sistem Informasi Perpustakaan
+# 📚 Sistem Informasi Perpustakaan
 
 ## Deskripsi
 
-Aplikasi Sistem Informasi Perpustakaan berbasis Laravel yang digunakan untuk mengelola data buku, anggota, dan transaksi peminjaman buku.
+Sistem Informasi Perpustakaan merupakan aplikasi berbasis Laravel yang digunakan untuk mengelola data buku, anggota, serta transaksi peminjaman dan pengembalian buku. Aplikasi ini juga dilengkapi dengan fitur laporan transaksi, perhitungan denda keterlambatan, serta notifikasi buku yang terlambat dikembalikan.
 
-## Fitur Utama
+---
 
-### 1. Manajemen Buku
+## 👤 Identitas
 
-* Tambah buku
-* Edit buku
-* Hapus buku
-* Lihat daftar buku
+**Nama :* Zahra Zahrani
+**NIM :** 60324011
+**Mata Kuliah :** Pemrograman Web 2
 
-### 2. Manajemen Anggota
+---
 
-* Tambah anggota
-* Edit anggota
-* Hapus anggota
-* Lihat daftar anggota
+# ✨ Fitur Aplikasi
 
-### 3. Transaksi Peminjaman
+## 📖 Manajemen Buku
 
-* Peminjaman buku
+* Menampilkan daftar buku
+* Menambah data buku
+* Mengubah data buku
+* Menghapus data buku
+* Mengelola stok buku
+
+## 👥 Manajemen Anggota
+
+* Menampilkan daftar anggota
+* Menambah anggota
+* Mengubah anggota
+* Menghapus anggota
+
+## 🔄 Transaksi Peminjaman
+
+* Menambah transaksi peminjaman
+* Menampilkan detail transaksi
 * Pengembalian buku
-* Update stok otomatis saat pengembalian
-* Perhitungan denda keterlambatan Rp5.000 per hari
+* Update stok otomatis saat buku dikembalikan
+* Perhitungan denda sebesar **Rp5.000/hari** apabila terlambat mengembalikan buku
 
-### 4. Laporan Transaksi
+## 📄 Laporan Transaksi
 
 * Filter berdasarkan tanggal
-* Filter berdasarkan status
+* Filter berdasarkan status transaksi
 * Filter berdasarkan anggota
 * Menampilkan total transaksi
 * Menampilkan total denda
 * Export laporan ke PDF
 
-### 5. Notifikasi Keterlambatan
+## 🔔 Notifikasi Keterlambatan
 
 * Widget jumlah buku terlambat pada dashboard
 * Daftar anggota yang terlambat
-* Badge "Terlambat" pada transaksi
-* Reminder pada detail transaksi yang melewati batas pengembalian
+* Badge **"Terlambat"** pada daftar transaksi
+* Reminder pada halaman detail transaksi apabila melewati tanggal pengembalian
 
-## Teknologi yang Digunakan
+---
 
-* Laravel
-* PHP
-* MySQL
-* Bootstrap
+# 🖼️ Screenshot Aplikasi
 
-## Screenshot
+## 1. Dashboard
 
-### Pengembalian Buku
+Halaman utama aplikasi yang menampilkan ringkasan informasi.
 
-* Detail transaksi sebelum pengembalian
-* Detail transaksi setelah pengembalian
-* Tampilan perhitungan denda
-* Bukti update stok buku
+![Dashboard](screenshots/01-dashboard.png)
 
-### Laporan Transaksi
+---
 
-* Halaman laporan transaksi
-* Filter laporan
-* Total transaksi dan total denda
-* Export PDF
+## 2. Data Buku
 
-### Notifikasi Keterlambatan
+Menampilkan seluruh data buku yang tersedia di perpustakaan.
 
-* Dashboard widget buku terlambat
-* Badge terlambat pada transaksi
-* Reminder pada detail transaksi
+![Data Buku](screenshots/02-data-buku.png)
 
-## Cara Menjalankan Project
+---
 
-1. Clone repository
-2. Install dependency
+## 3. Data Anggota
+
+Menampilkan daftar anggota perpustakaan.
+
+![Data Anggota](screenshots/03-data-anggota.png)
+
+---
+
+## 4. Daftar Transaksi
+
+Halaman yang menampilkan seluruh transaksi peminjaman buku.
+
+![Daftar Transaksi](screenshots/04-daftar-transaksi.png)
+
+---
+
+## 5. Detail Transaksi
+
+Menampilkan informasi lengkap mengenai transaksi peminjaman.
+
+![Detail Transaksi](screenshots/05-detail-transaksi.png)
+
+---
+
+## 6. Pengembalian Buku
+
+Proses pengembalian buku melalui tombol **Kembalikan Buku**.
+
+![Pengembalian Buku](screenshots/06-pengembalian-buku.png)
+
+---
+
+## 7. Perhitungan Denda
+
+Denda dihitung secara otomatis sebesar **Rp5.000 per hari** apabila melewati batas tanggal pengembalian.
+
+![Perhitungan Denda](screenshots/07-perhitungan-denda.png)
+
+---
+
+## 8. Laporan Transaksi
+
+Halaman laporan seluruh transaksi perpustakaan.
+
+![Laporan Transaksi](screenshots/08-laporan-transaksi.png)
+
+---
+
+## 9. Filter Laporan
+
+Laporan dapat difilter berdasarkan tanggal, status transaksi, dan anggota.
+
+![Filter Laporan](screenshots/09-filter-laporan.png)
+
+---
+
+## 10. Export PDF
+
+Laporan transaksi dapat diekspor menjadi file PDF.
+
+![Export PDF](screenshots/10-export-pdf.png)
+
+---
+
+## 11. Dashboard Buku Terlambat
+
+Widget yang menampilkan jumlah transaksi yang terlambat beserta daftar anggotanya.
+
+![Widget Buku Terlambat](screenshots/11-widget-buku-terlambat.png)
+
+---
+
+## 12. Badge Terlambat
+
+Badge berwarna merah akan muncul pada transaksi yang melewati batas pengembalian.
+
+![Badge Terlambat](screenshots/12-badge-terlambat.png)
+
+---
+
+## 13. Reminder Keterlambatan
+
+Peringatan akan muncul pada halaman detail transaksi jika buku belum dikembalikan setelah tanggal jatuh tempo.
+
+![Reminder](screenshots/13-reminder-keterlambatan.png)
+
+---
+
+## 14. Database Transaksi
+
+Struktur tabel transaksi pada database.
+
+![Database Transaksi](screenshots/14-database-transaksi.png)
+
+---
+
+## 15. Database Buku
+
+Struktur tabel buku yang menunjukkan perubahan stok setelah pengembalian.
+
+![Database Buku](screenshots/15-database-buku.png)
+
+---
+
+# ⚙️ Cara Menjalankan Project
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/username/nama-repository.git
+```
+
+## 2. Masuk ke Folder Project
+
+```bash
+cd nama-repository
+```
+
+## 3. Install Dependency
 
 ```bash
 composer install
 ```
 
-3. Copy file environment
+## 4. Salin File Environment
 
 ```bash
 cp .env.example .env
 ```
 
-4. Generate application key
+## 5. Generate Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-5. Konfigurasi database pada file .env
+## 6. Atur Konfigurasi Database
 
-6. Jalankan migration
+Sesuaikan file **.env** dengan database MySQL yang digunakan.
+
+## 7. Jalankan Migration
 
 ```bash
 php artisan migrate
 ```
 
-7. Jalankan server
+## 8. Jalankan Seeder (jika ada)
+
+```bash
+php artisan db:seed
+```
+
+## 9. Jalankan Server Laravel
 
 ```bash
 php artisan serve
 ```
 
+---
+
+# 🛠️ Teknologi yang Digunakan
+
+* Laravel
+* PHP
+* MySQL
+* Bootstrap
+* HTML
+* CSS
+* JavaScript
+
+---
+
+# 📌 Fitur yang Dikerjakan
+
+## ✅ Tugas 1
+
+* Pengembalian buku
+* Update stok otomatis
+* Perhitungan denda Rp5.000/hari
+* Menampilkan total denda pada detail transaksi
+
+## ✅ Tugas 2
+
+* Halaman laporan transaksi
+* Filter tanggal
+* Filter status
+* Filter anggota
+* Total transaksi
+* Total denda
+* Export PDF
+
+## ✅ Tugas 3
+
+* Widget buku terlambat
+* Badge terlambat
+* Reminder keterlambatan pada detail transaksi
+
+---
+
+# 📄 Lisensi
+
+Project ini dibuat untuk memenuhi tugas mata kuliah **Pemrograman Web 2**.
